@@ -1,6 +1,6 @@
 # Lesson: Interaction Design
 
-### First and Last Name: IORDANIS
+### First and Last Name: IORDANIS ELIZOGLOU
 ### University Registration Number: dpsd19034
 ### GitHub Personal Profile: Jelizog
 ### Augmented Reality Personal Repository: [URL](https://jelizog.github.io/Augmented-Reality/marker_based/index.html)
