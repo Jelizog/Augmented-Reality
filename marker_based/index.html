@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Augmented Reality Web Applications</title>
-</head>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
+    <script src="build/aframe-ar.js"></script>
+    
+    <!-- particles system component -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    
+    <!-- speech command component -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
+    <script src="build/aframe-speech-command-component.js"></script> 
+    
 
-<body>
-    <br><a href="marker_based/index.html">Marker-Based</a>
-    <br><a href="location_based/index.html">Location-Based</a>
-    <br><a href="location_based/syros.html">Syros Location-Based</a>
-</body>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+        <a-marker preset="hiro">
 
+            <!-- Geometrika sxhmata-->
+            <a-entity id="box" geometry="primitive: box; width: 0.5; depth: 0.5; height: 0.5" position="0 0 0" material="color: #4CC3D9"></a-entity>
+            <a-sphere position="1 1 1" radius="0.5" color="#EF2D5E"></a-sphere>
+            <a-cylinder position="-1 -1 -1" radius="0.5" height="1.0" color="#FFC65D"></a-cylinder>
+            <a-entity id="annyang" annyang-speech-recognition></a-entity>
+            
+            <!-- Edw epexergazomaste to snow-->
+            <a-entity id="links" position="0 2.25 -15" particle-system="preset: snow" visible= "false" 
+            speech-command__show="command: start; type: attribute; attribute: visible; visible: false; value: true;" 
+            speech-command__hide="command: stop; type: attribute; attribute: visible; value: false;">
+            </a-entity>
+
+            
+            <!--One or more entities with the speech-command component-->
+
+
+
+
+
+
+
+        </a-marker>
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
