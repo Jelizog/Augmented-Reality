@@ -30,7 +30,10 @@ Step-by-Step Process:
 
 Step-by-Step Process:
 
-1. 
+Step 1:
+1. Started with photoshop building for the files that we oyght to have ready.
+2. From this [link](https://aframe.io/blog/arjs/), I made the .patt files, also helped me about the correct form of the code to inset the images.
+3. 
 
 # 3rd Deliverable 
 
