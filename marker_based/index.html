@@ -21,21 +21,54 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
 
-        <a-marker type="pattern" url="marker_based/assets/pattern-card-H.patt">
+    <a-marker type="pattern" url="marker_based/assets/pattern-card-H.patt">
 
-            <!-- Geometrika sxhmata-->
-            <a-entity id="box" geometry="primitive: box; width: 0.5; depth: 0.5; height: 0.5" position="0 0 0" material="color: #4CC3D9"></a-entity>
-            <a-sphere position="1 1 1" radius="0.5" color="#EF2D5E"></a-sphere>
-            <a-cylinder position="-1 -1 -1" radius="0.5" height="1.0" color="#FFC65D"></a-cylinder>
-            <a-entity id="annyang" annyang-speech-recognition></a-entity>
+    <!-- Geometrika sxhmata-->
+    <a-entity id="box" geometry="primitive: box; width: 0.5; depth: 0.5; height: 0.5" position="0 0 0" material="color: #4CC3D9"></a-entity>
+    <a-sphere position="1 1 1" radius="0.5" color="#EF2D5E"></a-sphere>
+    <a-cylinder position="-1 -1 -1" radius="0.5" height="1.0" color="#FFC65D"></a-cylinder>
+    <a-entity id="annyang" annyang-speech-recognition></a-entity>
 
-            <!-- Edw epexergazomaste to snow-->
-            <a-entity id="links" position="0 2.25 -15" particle-system="preset: snow" visible= "false"
-            speech-command__show="command: start; type: attribute; attribute: visible; value: true;"
-            speech-command__hide="command: stop; type: attribute; attribute: visible; value: false;"></a-entity>
+    <!-- Edw epexergazomaste to snow-->
+    <a-entity id="links" position="0 2.25 -15" particle-system="preset: snow" visible= "false"
+    speech-command__show="command: start; type: attribute; attribute: visible; value: true;"
+    speech-command__hide="command: stop; type: attribute; attribute: visible; value: false;"></a-entity>
 
 
-            <!--One or more entities with the speech-command component-->
+    <!--One or more entities with the speech-command component-->
+
+
+    <!--Reading my dpsd marker-->
+    <a-marker-camera type='pattern' url='assets/pattern-MARKER.patt'>
+    <!--Showing my name and the image-->
+    <a-text value="IORDANIS" position="1 0.5 0" ></a-text>
+    <a-text value="ELIZOGLOU " position="1 1 0"></a-text>
+    <!--<a-image src="assets/Bruce_Dj.jpg" position="0 0.5 0"></a-image>-->
+    </a-marker-camera>
+
+
+    <!--Define the glb hydro asset-->
+    <a-assets>
+    <a-asset-item id="hydro" src="assets/HYDROGEN.gltf"></a-asset-item>
+    </a-assets>
+    <!--Reading and showing the H atom-->
+    <a-marker type='pattern' url='assets/pattern-card-H.patt'>
+    <!--use the glb hydro model-->
+    <a-entity gltf-model="#hydro" scale= "0.2 0.2 0.2";></a-entity>
+    </a-marker>
+
+
+    <!--Define the glb oxy asset-->
+    <a-assets>
+    <a-asset-item id="oxy" src="assets/oxygen.gltf"></a-asset-item>
+    </a-assets>
+    <!--Reading and showing the O atom-->
+    <a-marker type='pattern' url='assets/pattern-card-O.patt'>
+    <!--use your glb oxy model-->
+    <a-entity gltf-model="#oxy" scale= "0.5 0.5 0.5";></a-entity>
+    </a-marker>
+
+
 
 
 
