@@ -15,28 +15,51 @@
 
     <body style="margin : 0px; overflow: hidden;">
 
+      <script>
+           AFRAME.registerComponent("marker-distance", {
+
+               init: function () {
+               this.hydrogen = document.querySelector('#hydrogen')
+               this.oxygen = document.querySelector('#oxygen')
+               this.water = document.querySelector('#water')
+               this.hmarker = document.querySelector('#hmarker')
+               this.omarker = document.querySelector('#omarker')
+           },
+           tick: function()
+           {
+               var hmarkerPos, omarkerPos, markerDistance
+
+               hmarkerPos = new THREE.Vector3();
+               this.hmarker.object3D.getWorldPosition(hmarkerPos);
+
+               omarkerPos = new THREE.Vector3();
+               this.omarker.object3D.getWorldPosition(omarkerPos);
+
+               markerDistance = hmarkerPos.distanceTo(omarkerPos);
+
+               if (markerDistance<2)
+               {
+                   this.hydrogen.setAttribute("visible", false)
+                   this.oxygen.setAttribute("visible", false)
+                   this.water.setAttribute("visible", true)
+               }
+               else
+               {
+                   this.hydrogen.setAttribute("visible",true)
+                   this.oxygen.setAttribute("visible",true)
+                   this.water.setAttribute("visible", false)
+               }
+           },
+       });
+      </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <a-scene
+      <a-scene
           vr-mode-ui="enabled: false;"
           renderer="logarithmicDepthBuffer: true;"
           embedded
           arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-
-
 
 
 
@@ -49,29 +72,32 @@
             <a-image src="assets/DPSD19034.png" position="0 0.6 0"></a-image>
           </a-marker>
 
-
           <!--orizoume to gltf hydro-->
+          <a-asset>
+            <a-asset-item id="hydro_asset" src="assets/HYDROGEN.gltf"></a-asset-item>
+            <a-asset-item id="water_asset" src="assets/water.gltf"></a-asset-item>
+          </a-asset>
 
-          <a-asset-item id="hydro" src="assets/HYDROGEN.gltf"></a-asset-item>
           <!--Reading and showing the H atom-->
-          <a-marker id="hydro" type='pattern' url='assets/pattern-card-H.patt'>
-          <!--use the glb hydro model-->
-          <a-entity gltf-model="#hydro" scale= "0.7 0.7 0.7"  position="0 0.6 0";></a-entity>
-          </a-marker>
+          <a-marker id="hmarker" type='pattern' url='assets/pattern-card-H.patt'>
 
+            <!--use the glb hydro model-->
+            <a-entity id="hydrogen" gltf-model="#hydro" scale= "0.7 0.7 0.7"  position="0 0.6 0";></a-entity>
+            <a-entity id="water" gltf-model="#water_asset" scale= "0.5 0.5 0.5"  position="0 0.6 0";></a-entity>
+          </a-marker>
 
           <!--orizoume to gltf oxy-->
-
-          <a-asset-item id="oxy" src="assets/oxygen.gltf"></a-asset-item>
+            <a-asset-item id="oxy_asset" src="assets/oxygen.gltf"></a-asset-item>
 
           <!--Reading and showing the O atom-->
-          <a-marker type='pattern' url='assets/pattern-card-O.patt'>
+          <a-marker id="omarker" type='pattern' url='assets/pattern-card-O.patt'>
+
           <!--use your glb oxy model-->
-          <a-entity gltf-model="#oxy" scale= "0.5 0.5 0.5";></a-entity>
+            <a-entity id="oxygen" gltf-model="#oxy" scale= "0.7 0.7 0.7";></a-entity>
           </a-marker>
 
 
-
+          <!-- Deliverable 1 -->
           <a-marker preset="hiro">
 
           <!-- Geometrika sxhmata-->
