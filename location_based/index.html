@@ -7,24 +7,30 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>-->
     <script src='build/aframe-ar-nft.js'></script>
-</head>
+
 
 <!-- Bazoume ton kodika gia na bgazei to keimeno-->
+    <script>
+       		  AFRAME.registerComponent("information", {
+       			init: function() {
+       			let toggle = false
+       			this.el.addEventListener("click", (e) => {
+       		  let text = document.querySelectorAll(".clickable")
+       			text.forEach(function(el) {
+       	    el.setAttribute("visible", toggle)
+       			})
+       				 toggle = !toggle
+       			       })
+       			      }
+       		      })
+    </script>
 
-<script>
-   		  AFRAME.registerComponent("information", {
-   			init: function() {
-   			let toggle = false
-   			this.el.addEventListener("click", (e) => {
-   		  let text = document.querySelectorAll(".clickable")
-   			text.forEach(function(el) {
-   	    el.setAttribute("visible", toggle)
-   			})
-   				 toggle = !toggle
-   			       })
-   			      }
-   		      })
-</script>
+
+</head>
+
+
+
+
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene
@@ -42,7 +48,7 @@
   </a-assets>
 
 <a-entity id="CHRIST_REDEEMER_model" position="0 0 -180" class="click"
-          scale="1 1 1"
+          scale="5 5 5"
           gltf-model="#CHRIST_REDEEMER"
           animation_rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;"
           gps-entity-place="latitude: 44.506477; longitude: 11.301524;">
