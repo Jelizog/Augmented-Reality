@@ -30,13 +30,17 @@ Step-by-Step Process:
 
 Step-by-Step Process:
 
-Step 1:
-1. Started with photoshop building for the files that we oyght to have ready.
+1. Started with photoshop building for the files that we ought to have ready.
 2. From this [link](https://aframe.io/blog/arjs/), I made the .patt files, also helped me about the correct form of the code to inset the images.
-3. 
+3. I got help to make the atoms the oxygen and the hydrogen in blender.
+4. I inserted them in the code (I have comments inside the code)
+5. After trials and errors and small changes such as -> file names and grammar, I managed to make it happend.
 
 # 3rd Deliverable 
 
+1. With the same logic
+2. I inserted the a-assets for the gltf model
+3. 
 
 # Conclusions
 
