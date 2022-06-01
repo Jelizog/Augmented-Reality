@@ -40,7 +40,7 @@ Step-by-Step Process:
 
 1. With the same logic
 2. I inserted the a-assets for the gltf model
-3. 
+3. Also from links of stackflow managed to build the code.
 
 # Conclusions
 
@@ -49,3 +49,4 @@ Step-by-Step Process:
 
 - https://github.com/AR-js-org/AR.js
 - https://lmalave.github.io/aframe-speech-command-component/examples/image-gallery.html
+- https://sketchfab.com/3d-models/christ-the-redeemer-rio-fa8c4b24898c40ec86a40449cec47474
