@@ -26,12 +26,9 @@
     </script>
 
 
+
+
 </head>
-
-
-
-
-
 <body style='margin: 0; overflow: hidden;'>
     <a-scene
         vr-mode-ui="enabled: false"
@@ -44,14 +41,14 @@
 
 <!-- 3D MODEL-->
   <a-assets>
-    <a-asset-item id="CHRIST_REDEEMER" src="assets/scene.gltf"></a-asset-item>
+    <a-asset-item id="rio" src="assets/scene.gltf"></a-asset-item>
   </a-assets>
 
-<a-entity id="CHRIST_REDEEMER_model" position="0 0 -180" class="click"
+<a-entity id="rio_model" position="0 0 -180" class="click"
           scale="5 5 5"
-          gltf-model="#CHRIST_REDEEMER"
+          gltf-model="#rio"
           animation_rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;"
-          gps-entity-place="latitude: 44.506477; longitude: 11.301524;">
+          gps-entity-place="latitude: 44.506477; longitude: 11.301524;" information>
 </a-entity>
 
 
@@ -68,7 +65,7 @@
 
         <a-camera
             rotation-reader
-            gps-camera="simulateLatitude: -22.951950563090207; simulateLongitude: -43.210452333253734; minDistance: 1; maxDistance: 700;"
+            gps-camera="simulateLatitude: 44.504348; simulateLongitude: 11.301027; minDistance: 1; maxDistance: 700;"
         >
 		</a-camera>
 	</a-scene>
