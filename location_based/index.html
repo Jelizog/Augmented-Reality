@@ -9,6 +9,22 @@
     <script src='build/aframe-ar-nft.js'></script>
 </head>
 
+<!-- Bazoume ton kodika gia na bgazei to keimeno-->
+
+<script>
+   		  AFRAME.registerComponent("information", {
+   			init: function() {
+   			let toggle = false
+   			this.el.addEventListener("click", (e) => {
+   		  let text = document.querySelectorAll(".clickable")
+   			text.forEach(function(el) {
+   	    el.setAttribute("visible", toggle)
+   			})
+   				 toggle = !toggle
+   			       })
+   			      }
+   		      })
+</script>
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene
@@ -16,15 +32,31 @@
 		embedded
 		arjs='sourceType: webcam; debugUIEnabled: false;'>
 
+    <a-entity id="cameraRig">
+         <a-entity id="head" camera wasd-controls look-controls cursor="rayOrigin: mouse" position="0 1.6 0"></a-entity>
+       </a-entity>
+
+<!-- 3D MODEL-->
+  <a-assets>
     <a-asset-item id="CHRIST_REDEEMER" src="assets/scene.gltf"></a-asset-item>
+  </a-assets>
 
-        <a-box
-            material="color: red;"
-            scale="20 20 20"
-            gps-entity-place="latitude: -22.951950563090207; longitude: -43.210452333253734;">
-        </a-box>
+<a-entity id="CHRIST_REDEEMER_model" position="0 0 0" class="click"
+          scale="1 1 1"
+          gltf-model="#CHRIST_REDEEMER"
+          animation_rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;"
+          gps-entity-place="latitude: 44.506477; longitude: 11.301524;" information>
+</a-entity>
 
-        <a-text value="KEIMENO" position="0 0 0" ></a-text>
+
+<!-- Model Text -->
+
+    <a-text id="text_info" class="clickable" text="value: Christ the Redeemer is an Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil"
+      position="0 0 -90"
+      color= "#F4D35E"
+      scale="7 7 7"
+      visible="false">
+    </a-text>
 
 
 
